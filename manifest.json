@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Synonym Viewer",
+    "version": "1.0",
+    "description": "Extensão para tornar mais prático e rápido o processo para visualizar sinonimos de palavras",
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "activeTab",
+      "contextMenus"
+    ],
+    "icons": {
+        "16": "icon-bitty.png",
+        "48": "icon-small.png",
+        "128": "icon-large.png"
+    },
+    "content_scripts":[
+        {
+        "matches":["<all_urls>"],
+        "js":["content.js"]
+        }
+        ],
+    "background":{
+        "scripts" : ["eventpage.js"],
+        "persistent": false
+    }
+  }
